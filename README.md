@@ -15,3 +15,11 @@ Abra `index.html` em um navegador moderno. Não é necessário instalar dependê
 - Layout adaptável para celular e desktop, com controles acessíveis por teclado.
 
 Os dados ficam no navegador e podem ser apagados limpando o armazenamento local. Este MVP não substitui acompanhamento profissional.
+
+## Deploy no GitHub Pages
+
+O site é publicado automaticamente pelo GitHub Actions quando há um push na branch `main`. Depois que o deploy terminar, ele ficará disponível em:
+
+https://tecinfo2a.github.io/equilibrio/
+
+Na primeira publicação, confirme em **Settings > Pages** que a origem de build está configurada como **GitHub Actions**.
