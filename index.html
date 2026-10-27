@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f6f1">
+    <meta name="description" content="Um espaço simples para cuidar do seu equilíbrio, um dia de cada vez.">
+    <title>Equilíbrio — seu espaço de bem-estar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Equilíbrio, início">
+        <span class="brand-mark" aria-hidden="true">e</span>
+        <span>equilíbrio</span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a class="nav-link active" href="#inicio">Meu dia</a>
+        <a class="nav-link" href="#rotina">Minha rotina</a>
+        <a class="nav-link" href="#semana">Minha semana</a>
+      </nav>
+      <span class="topbar-note"><span class="status-dot" aria-hidden="true"></span> Seu espaço, no seu ritmo</span>
+    </header>
+
+    <main id="inicio">
+      <section class="welcome">
+        <div class="welcome-copy">
+          <p class="eyebrow" id="today-label">SEU MOMENTO DE PAUSA</p>
+          <h1>Um pouco de cuidado<br><em>já muda o dia.</em></h1>
+          <p>Não precisa dar conta de tudo. Comece por perceber como você está.</p>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="hill hill-back"></div>
+          <div class="hill hill-front"></div>
+          <span class="art-caption">respire<br>e recomece</span>
+        </div>
+      </section>
+
+      <div class="dashboard-grid">
+        <section class="panel checkin-panel" aria-labelledby="checkin-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">CHECK-IN DIÁRIO</p>
+              <h2 id="checkin-title">Como você está hoje?</h2>
+            </div>
+            <span class="step-label">01 <span>/ 02</span></span>
+          </div>
+          <p class="muted">Escolha o que mais combina com este momento.</p>
+
+          <div class="mood-options" role="group" aria-label="Como você está se sentindo?">
+            <button class="mood-option" type="button" data-mood="leve" aria-pressed="false">
+              <span class="mood-emoji" aria-hidden="true">☀️</span><span>Leve</span>
+            </button>
+            <button class="mood-option" type="button" data-mood="bem" aria-pressed="false">
+              <span class="mood-emoji" aria-hidden="true">🌿</span><span>Bem</span>
+            </button>
+            <button class="mood-option" type="button" data-mood="mais-ou-menos" aria-pressed="false">
+              <span class="mood-emoji" aria-hidden="true">☁️</span><span>Mais ou menos</span>
+            </button>
+            <button class="mood-option" type="button" data-mood="dificil" aria-pressed="false">
+              <span class="mood-emoji" aria-hidden="true">🌧️</span><span>Difícil</span>
+            </button>
+          </div>
+
+          <label class="note-label" for="daily-note">O que está passando pela sua cabeça?</label>
+          <textarea id="daily-note" rows="3" maxlength="280" placeholder="Escreva sem pressão. Este espaço é seu."></textarea>
+          <div class="form-footer">
+            <span class="private-note"><span aria-hidden="true">♧</span> Suas anotações ficam neste dispositivo.</span>
+            <button class="button button-primary" id="save-checkin" type="button">Salvar check-in <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="feedback" id="checkin-feedback" role="status" aria-live="polite"></p>
+        </section>
+
+        <aside class="panel quote-panel" aria-label="Lembrete de hoje">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <p class="eyebrow">UM LEMBRETE PARA HOJE</p>
+          <blockquote>Você não precisa florescer todos os dias. Às vezes, descansar também é crescer.</blockquote>
+          <div class="quote-footer"><span class="quote-line"></span><span>com gentileza</span></div>
+          <div class="leaf-decoration" aria-hidden="true">✳</div>
+        </aside>
+      </div>
+
+      <section class="panel routine-panel" id="rotina" aria-labelledby="routine-title">
+        <div class="section-heading routine-heading">
+          <div>
+            <p class="eyebrow">PEQUENOS PASSOS</p>
+            <h2 id="routine-title">Cuide de você, do seu jeito.</h2>
+            <p class="muted">Uma rotina possível é melhor do que uma rotina perfeita.</p>
+          </div>
+          <div class="progress-summary" aria-live="polite">
+            <span class="progress-number" id="today-progress">0/4</span>
+            <span class="progress-caption">passos de hoje</span>
+          </div>
+        </div>
+        <div class="routine-list" id="routine-list"></div>
+      </section>
+
+      <section class="panel week-panel" id="semana" aria-labelledby="week-title">
+        <div class="week-intro">
+          <p class="eyebrow">SEM COBRANÇA, SÓ PERCEPÇÃO</p>
+          <h2 id="week-title">Seu equilíbrio é feito de momentos.</h2>
+          <p class="muted">Olhe para a semana com curiosidade, não com cobrança.</p>
+        </div>
+        <div class="week-stats" aria-live="polite">
+          <div class="stat-card">
+            <span class="stat-icon" aria-hidden="true">✳</span>
+            <strong id="week-checkins">0</strong>
+            <span>dias com check-in nesta semana</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon stat-icon-green" aria-hidden="true">♡</span>
+            <strong id="week-steps">0</strong>
+            <span>pequenos passos concluídos</span>
+          </div>
+          <p class="week-footnote">Cada dia é um novo começo. Seus dados ficam apenas neste dispositivo.</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true">e</span><span>equilíbrio</span></a>
+        <span>Feito para caber na vida real.</span>
+        <a class="footer-top" href="#inicio">Voltar ao início ↑</a>
+      </footer>
+    </main>
+  </body>
+</html>
